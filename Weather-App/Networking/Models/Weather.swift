@@ -6,20 +6,16 @@
 //
 
 import Foundation
-struct WeatherModel: Decodable {
-    
+struct WeatherModel : Decodable {
     var name: String
     var main: Main
-    
     struct Main: Decodable {
-        
         var temp: Double
         var feelsLike: Double
         var tempMin: Double
         var tempMax: Double
         var pressure: Double
         var humidity: Double
-       
         enum CodingKeys: String, CodingKey {
             case feelsLike = "feels_like"
             case tempMin = "temp_min"
@@ -31,5 +27,3 @@ struct WeatherModel: Decodable {
       }
     
 }
-
-
