@@ -25,18 +25,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York, USA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="zun-6b-fh4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="zun-6b-fh4">
                                         <rect key="frame" x="0.0" y="148.5" width="374" height="35.5"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpk-n7-nr7">
+                                        <rect key="frame" x="0.0" y="209" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="6Mf-V3-OI8"/>
+                                        </constraints>
+                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="mpk-n7-nr7" firstAttribute="leading" secondItem="Rzo-1P-8o4" secondAttribute="leading" id="4vd-pk-L90"/>
                                     <constraint firstItem="0Nk-cF-YhB" firstAttribute="centerY" secondItem="Rzo-1P-8o4" secondAttribute="centerY" constant="-16" id="9TE-hU-gbb"/>
                                     <constraint firstItem="zun-6b-fh4" firstAttribute="leading" secondItem="Rzo-1P-8o4" secondAttribute="leading" id="Mus-TZ-kUn"/>
+                                    <constraint firstAttribute="bottom" secondItem="mpk-n7-nr7" secondAttribute="bottom" constant="10" id="R9k-KL-RQs"/>
                                     <constraint firstAttribute="trailing" secondItem="zun-6b-fh4" secondAttribute="trailing" id="UOs-SE-PcV"/>
+                                    <constraint firstAttribute="trailing" secondItem="mpk-n7-nr7" secondAttribute="trailing" id="bAl-oe-yIs"/>
                                     <constraint firstItem="zun-6b-fh4" firstAttribute="top" secondItem="0Nk-cF-YhB" secondAttribute="bottom" constant="8" id="mBv-NB-Esa"/>
                                     <constraint firstItem="0Nk-cF-YhB" firstAttribute="centerX" secondItem="Rzo-1P-8o4" secondAttribute="centerX" id="rzw-Y4-22n"/>
                                 </constraints>
@@ -53,8 +62,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="66°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQF-5C-gz3">
-                                                <rect key="frame" x="321.5" y="38" width="36.5" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="66° C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQF-5C-gz3">
+                                                <rect key="frame" x="297.5" y="38" width="60.5" height="29"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -78,8 +87,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="46°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLs-NY-Axe">
-                                                <rect key="frame" x="321.5" y="38.5" width="36.5" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="46° C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLs-NY-Axe">
+                                                <rect key="frame" x="297.5" y="38.5" width="60.5" height="29"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -103,8 +112,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="76°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tH-AO-MWO">
-                                                <rect key="frame" x="321.5" y="38.5" width="36.5" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="76° C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tH-AO-MWO">
+                                                <rect key="frame" x="297.5" y="38.5" width="60.5" height="29"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -198,6 +207,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dropDownMenu" destination="mpk-n7-nr7" id="bkh-zu-IYr"/>
                         <outlet property="feelsLike" destination="CQF-5C-gz3" id="duw-Xc-8Ri"/>
                         <outlet property="humidityLabel" destination="n6f-Uz-UXb" id="Uhk-4Q-ldG"/>
                         <outlet property="locationLabel" destination="zun-6b-fh4" id="gor-gE-6Up"/>

@@ -13,7 +13,7 @@ struct NetworkController {
     private static var baseURL: String  = "api.openweathermap.org"
     private static let appid: String = "18aa3d000da3bb3028619eacf9be8b1b"
     enum Endpoint {
-        case getWeatherByCoordinate(path: String =  "/data/2.5/weather", lat: Double, lon: Double)
+        case getWeatherByCoordinate(path: String = "/data/2.5/weather", lat: Double, lon: Double)
         var url: URL? {
             var components = URLComponents()
             components.scheme = "https"
@@ -28,21 +28,22 @@ struct NetworkController {
                 return path
             }
         }
-       private var queryItems: [URLQueryItem]{
+       private var queryItems: [URLQueryItem] {
            var queryItems = [URLQueryItem]()
             switch self {
             case .getWeatherByCoordinate(_, let lat, let lon):
                 queryItems.append(URLQueryItem(name: "lat", value: String(lat)))
                 queryItems.append(URLQueryItem(name: "lon", value: String(lon)))
+           
             }
            queryItems.append(URLQueryItem(name: "appid", value: appid ))
         return queryItems
         }
     }
-    static func fetchWeather( lat: Double, lon: Double, _ completion: @escaping((WeatherModel) -> Void)) {
-        if let url = Endpoint.getWeatherByCoordinate(lat:lat, lon:lon).url {
+    static func fetchWeatherByCoordinate( lat: Double, lon: Double, _ completion: @escaping((WeatherModel) -> Void)) {
+        if let url = Endpoint.getWeatherByCoordinate(lat: lat, lon: lon).url {
             URLSession.shared.dataTask(with: url)
-                {(data, response, error) in
+                { (data, response, error) in
                     if let error = error {
                         print("An error occured.", error)
                     }
@@ -52,4 +53,6 @@ struct NetworkController {
                     }}.resume()
         }
     }
+    
+    
 }
