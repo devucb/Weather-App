@@ -40,12 +40,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         locationLabel.text = viewModel.locationString
     }
     private func setupDropDownMenu() {
-        dropDownMenu.delegate = self
-        dropDownMenu.dataSource = self
+       dropDownMenu.delegate = self
+       dropDownMenu.dataSource = self
        cities = loadJson()
-       cities.shuffle()
-       cities = Array(cities[0...10])
+       
+        if !cities.isEmpty {
+            cities.shuffle()
+        }
+        if !viewModel.isLocationPermissionEnabled {
+            cities = Array(cities[0...10])
+            guard let randomElement = cities.randomElement() else { return }
+            guard let randomElementIndex = cities.firstIndex(where: {$0.id == randomElement.id}) else { return }
+            viewModel.location = CLLocation(latitude: randomElement.coord.lat, longitude: randomElement.coord.lon)
+           
+            dropDownMenu.selectRow(randomElementIndex, inComponent: 0, animated: true)
+        }
     }
+  
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

@@ -15,6 +15,7 @@ class ViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             fetchByCoordinate()
         }
     }
+    var isLocationPermissionEnabled = false
     var weather: WeatherModel? {
         didSet {
             bind?()
@@ -63,6 +64,7 @@ class ViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        isLocationPermissionEnabled = true
         guard let latestLocation = locations.first else { return }
         DispatchQueue.main.async {
          self.location = latestLocation
@@ -70,6 +72,7 @@ class ViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
+        
     }
     func checkLocationController() {
         locationManager.requestLocation()
